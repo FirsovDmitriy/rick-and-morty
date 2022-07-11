@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  outline: 0;
+  cursor: pointer;
+}
+
 body {
   background: rgba(204, 204, 204, 0.5);
 }
