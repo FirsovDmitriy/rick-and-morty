@@ -1,7 +1,8 @@
 <template>
   <div class="character">
     <div class="character__img-wrapper">
-      <img :src="character.image" alt="" class="character__img">
+      <!-- <img :src="character.image" alt="" class="character__img"> -->
+      img
     </div>
     <div class="character__content-wrapper">
       <div class="character__row">

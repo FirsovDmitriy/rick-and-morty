@@ -1,7 +1,7 @@
 <template>
   <div>
     <the-navbar />
-    <main>
+    <main class="main">
       <router-view />
     </main>
   </div>
@@ -41,5 +41,10 @@ export default {
 
 .block {
   text-align: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
 }
 </style>

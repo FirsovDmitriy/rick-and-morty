@@ -5,7 +5,8 @@ import { CHARACTERS_BY_PAGE } from '@/api/routes'
 export default createStore({
   state: {
     characters: {},
-    pages: 0
+    pages: 0,
+    preloader: true
   },
 
   getters: {
@@ -33,7 +34,7 @@ export default createStore({
   },
 
   actions: {
-    getCharacters ({ commit }, page) {
+    getCharacters ({ state, commit }, page) {
       return instance.get(CHARACTERS_BY_PAGE(page))
         .then(({ data }) => {
           const { info, results } = data
@@ -41,6 +42,9 @@ export default createStore({
           commit('setPages', info.pages)
         })
         .catch(error => console.log(error))
+        .finally(() => {
+          state.preloader = false
+        })
     }
   },
 
